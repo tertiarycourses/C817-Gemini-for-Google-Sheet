@@ -11,3 +11,6 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Superseded courseware versions (only the current version is published)
+archive/

@@ -1,5 +1,5 @@
 """
-SINGLE SOURCE OF TRUTH — C817 AI Application for Google Sheet (non-WSQ).
+SINGLE SOURCE OF TRUTH — C817 Gemini for Google Sheet (non-WSQ).
 
 A beginner, one-day (7.5 hours), hands-on short course on using generative AI —
 Google's Gemini — inside Google Sheets to generate and explain formulas, clean
@@ -16,11 +16,11 @@ NON-WSQ RULES — the engine enforces these, do not reintroduce them here:
 """
 
 # ------------------------------------------------------------------ metadata
-TITLE        = "AI Application for Google Sheet (C817)"
-SHORT_TITLE  = "AI Application for Google Sheet (C817)"   # used in output filenames
+TITLE        = "Gemini for Google Sheet (C817)"
+SHORT_TITLE  = "Gemini for Google Sheet (C817)"   # used in output filenames
 COURSE_CODE  = "C817"                                     # non-WSQ code — never a TGS- ref
-VERSION      = "v1.0"
-VERSION_DATE = "27 July 2026"
+VERSION      = "v1.1"
+VERSION_DATE = "4 October 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
 TRAINER      = "Dr. Alfred Ang"
@@ -150,7 +150,7 @@ COURSE_OVERVIEW = dict(
 
 # ------------------------------------------------------------------ LG content
 LG_INTRO = (
-    "This Learner Guide accompanies the AI Application for Google Sheet (C817) course, conducted by "
+    "This Learner Guide accompanies the Gemini for Google Sheet (C817) course, conducted by "
     "Tertiary Infotech Academy Pte Ltd. It carries the full detail of all 8 hands-on labs, in the "
     "order you will run them, together with the concepts each lab depends on."
 )
@@ -228,5 +228,6 @@ LG_GLOSSARY = [
 
 # ------------------------------------------------------------------ version history
 VERSION_HISTORY = [
-    ("1.0", VERSION_DATE, "Initial release — C817 AI Application for Google Sheet courseware.", TRAINER),
+    ("1.0", "27 July 2026", "Initial release — C817 AI Application for Google Sheet courseware.", TRAINER),
+    ("1.1", VERSION_DATE, "Course retitled to Gemini for Google Sheet.", TRAINER),
 ]

@@ -1,6 +1,6 @@
 # Lab 1 — Set Up and Access Gemini AI in Google Sheets
 
-**Topic 01:** Getting Started with AI in Google Sheets  |  **Day 1**  |  **Approx. 20 min**  |  **Course:** AI Application for Google Sheet (C817)
+**Topic 01:** Getting Started with AI in Google Sheets  |  **Day 1**  |  **Approx. 20 min**  |  **Course:** Gemini for Google Sheet (C817)
 
 ## Scenario
 
@@ -92,4 +92,4 @@ Save your work — it becomes part of your cleaned, analysed **Riverside Supplie
 
 ---
 
-*AI Application for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Gemini for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*

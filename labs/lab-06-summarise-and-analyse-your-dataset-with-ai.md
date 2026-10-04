@@ -1,6 +1,6 @@
 # Lab 6 — Summarise and Analyse Your Dataset with AI
 
-**Topic 02:** Analysing and Automating Data with AI in Sheets  |  **Day 1**  |  **Approx. 45 min**  |  **Course:** AI Application for Google Sheet (C817)
+**Topic 02:** Analysing and Automating Data with AI in Sheets  |  **Day 1**  |  **Approx. 45 min**  |  **Course:** Gemini for Google Sheet (C817)
 
 ## Scenario
 
@@ -103,4 +103,4 @@ Save your work — it becomes part of your cleaned, analysed **Riverside Supplie
 
 ---
 
-*AI Application for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Gemini for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*

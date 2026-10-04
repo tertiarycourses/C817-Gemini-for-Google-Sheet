@@ -1,4 +1,4 @@
-# Labs — AI Application for Google Sheet (C817)
+# Labs — Gemini for Google Sheet (C817)
 
 **Course Code:** C817  |  **Version v1.0 · 27 July 2026**
 
@@ -21,4 +21,4 @@ See [tools.md](tools.md) for the accounts and apps used across the labs.
 
 ---
 
-*AI Application for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Gemini for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*

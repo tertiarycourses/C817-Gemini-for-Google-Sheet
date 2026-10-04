@@ -1,4 +1,4 @@
-# Tools & Accounts — AI Application for Google Sheet (C817)
+# Tools & Accounts — Gemini for Google Sheet (C817)
 
 **Course Code:** C817  |  **Version v1.0 · 27 July 2026**
 
@@ -27,4 +27,4 @@ Everything in this course runs in the browser. You need no installs beyond a mod
 
 ---
 
-*AI Application for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Gemini for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*
