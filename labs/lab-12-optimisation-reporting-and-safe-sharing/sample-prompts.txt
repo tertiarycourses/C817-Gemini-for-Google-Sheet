@@ -1,0 +1,65 @@
+Gemini for Google Sheet (C817) — Lab 12: Optimise the Hiring Decision and Share Results Safely
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-12
+
+[1] Optimise
+What is the highest total Weighted_Score possible if the budget is reduced by S$2,000?
+
+[2] Optimise
+Schedule the eight final interviews across Monday and Tuesday so no interviewer has more than three in a row.
+
+[3] Docs
+Turn the recommendation into a one-page memo with a table of hires and start dates.
+
+[4] Gmail
+Catch me up on the latest emails about the Q3 hiring drive.
+
+[5] Share
+Which tabs in this spreadsheet would be risky to share outside Orchid Bay, and why?
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Hiring_Decision (Google Sheets copy)
+Tabs      : About_This_Data | Finalists (16 rows) | Constraints | Prompt_Log
+Budget    : Constraints!B8 = S$41,900 per month for 8 hires
+
+[Step 2]
+ASK GEMINI:
+I need to choose hires from the Finalists tab. Maximise the total Weighted_Score. Hire exactly the number of Openings for each Position on the Constraints tab, and keep the total Expected_Salary of everyone hired at or below the budget in Constraints!B8. Which candidates should I hire?
+
+[Step 3]
+ASK GEMINI:
+If there were no budget limit, which candidates would you pick, what would they cost, and what is the trade-off compared with your answer?
+
+[Step 4]
+ACTION:
+Add a checkbox column called Selected at the end of the table on the Finalists tab, unchecked by default.
+
+CHECK:
+Total salary     =SUMIFS(Finalists!F2:F17,Finalists!M2:M17,TRUE)
+Total score      =SUMIFS(Finalists!K2:K17,Finalists!M2:M17,TRUE)
+Within budget    =SUMIFS(Finalists!F2:F17,Finalists!M2:M17,TRUE)<=Constraints!B8
+Data Analysts    =COUNTIFS(Finalists!C2:C17,"Data Analyst",Finalists!M2:M17,TRUE)
+All hires        =COUNTIF(Finalists!M2:M17,TRUE)
+
+[Step 5]
+ASK GEMINI:
+Write a hiring recommendation for the client in under 200 words: the eight recommended hires by role, the total salary against the budget, the one trade-off made because of the budget, and the risks to check (notice periods and any must-have gaps).
+
+ASK GEMINI:
+What are the main points of OrchidBay_Screening_Rubric? Does my recommendation follow its fair screening rules?
+
+[Step 6]
+ASK GEMINI:
+Before I share this spreadsheet with the client, which columns contain personal data they don't need to see?
+
+ACTION:
+Create a new tab called Share_View with only Candidate_ID, Position, Weighted_Score and Selected for the rows where Selected is checked.
+
+[Step 7]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

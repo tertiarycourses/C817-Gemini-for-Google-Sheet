@@ -1,67 +1,97 @@
 # Gemini for Google Sheet
 
-A hands-on, one-day course on using Google's Gemini AI inside Google Sheets to build and explain formulas, clean and analyse data, and create charts — while checking every AI result before you rely on it.
+Use Gemini in Google Sheets to check, prepare and analyse data, write formulas, build tracker tables, charts and an interactive dashboard, and automate repeat work with Gems. Every lab uses realistic HR and recruitment data.
 
 | Course detail | Information |
 |---|---|
 | Course code | `C817` |
 | Programme | Non-WSQ |
-| Duration | 1 day (7.5 hours) |
-| Delivery | Instructor-led, hands-on practical labs |
+| Duration | 1 day · 7.5 hours |
+| Format | Instructor-led, with 12 hands-on labs |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/gemini-for-google-sheet.html) |
+| Lab prompts | [Copy-ready prompts page (step → prompt)](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/) |
+| Courseware version | v2.0 · 19 October 2026 |
+
+---
 
 ## About the course
 
-Work faster with your data using Gemini in Google Sheets. Instead of memorising functions, you describe what you want in plain language and let AI help you write formulas, tidy messy data, summarise a dataset and turn it into a clear chart. The labs follow one connected scenario: a messy quarter of orders for a small retailer, "Riverside Supplies", that you clean, analyse and visualise with Gemini, verifying each result against a value you can confirm.
+Gemini in Google Sheets works from a side panel beside your data. You describe what you want in plain English, and Gemini can summarise the sheet and answer questions about it. It also creates tables and formulas, explains and fixes formulas, and performs actions such as conditional formatting, pivot tables, dropdowns, sorting, filtering and find and replace. It can build charts, analyse data and solve optimisation problems. The AI function (`=AI`) and Fill with Gemini work inside cells, and Gems let you save a reusable expert assistant.
+
+The course follows Google's official guide, [Collaborate with Gemini in Google Sheets](https://support.google.com/docs/answer/14356410), and the [AI function guide](https://support.google.com/docs/answer/15877199).
+
+All twelve labs follow one storyline. **Orchid Bay Talent Partners** is a fictional Singapore recruitment and HR firm running its Q3 2026 hiring drive: 240 applications for eight client roles. You take that drive from a raw applicant-tracking export to a hiring decision. Each lab ends with a **Test It** step that lists the exact values you should get, so you can check Gemini's output against the data.
 
 ## Learning outcomes
 
-By the end of the course you will be able to:
+By the end of the course, you will be able to:
 
-1. Explain what generative AI and Gemini in Google Sheets are, and set up and access AI features inside a sheet.
-2. Generate spreadsheet formulas with AI and use AI to explain, step by step, what a formula does.
-3. Write clear, effective prompts that get accurate results for spreadsheet tasks.
-4. Use AI to clean, transform and organise messy spreadsheet data into a usable table.
-5. Summarise and analyse datasets with AI to surface useful, decision-ready insights.
-6. Create tables, charts and visualisations from your data using AI.
-7. Validate AI output for accuracy and apply AI safely and responsibly to real work data.
+1. **Fundamentals of Google Sheet.** Use Gemini's side panel, actions and formula help to summarise, quality-check and prepare HR data. Generate, explain and fix formulas such as VLOOKUP, COUNTIF and nested IF.
+2. **Data analytics and visualization.** Create colour-coded tables, trackers and dropdowns. Extract and categorise text with the AI function. Generate data analysis, insights, pivot tables and charts, verifying every result.
+3. **Interactive dashboard.** Build an interactive hiring dashboard and automate repeat screening with a custom Gem. Use Gemini's optimisation solver, reporting and sharing features responsibly.
 
 ## Topics covered
 
-**Topic 1 — Getting Started with AI in Google Sheets**
-Generative AI and Gemini in Sheets · setting up and accessing AI · generating and explaining formulas · effective prompting
-
-**Topic 2 — Analysing and Automating Data with AI in Sheets**
-Cleaning, transforming and organising data · summarising and analysing datasets · tables, charts and visualisations · validating and applying AI safely
+| Topic | Content |
+|---|---|
+| **1. Fundamentals of Google Sheet** | What Gemini in Google Sheets can do · prompting and the side panel (sources, Insert, Retry, Undo, Clear history) · data quality checks · Gemini actions (preview, apply, undo) and data prep · VLOOKUP, COUNTIF and nested IF · generating, explaining and fixing formulas |
+| **2. Data Analytics and Visualization** | Tables, trackers and dropdowns from unstructured notes · conditional formatting · the AI function (`=AI`), Fill with Gemini and AI columns · data analysis and insights (Analysis steps, Export to Docs) · pivot tables · charts and graphs · inserted vs linked charts |
+| **3. Interactive Dashboard** | Dropdown selectors and KPI formulas (COUNTIFS, AVERAGEIFS) · linked charts, metric switch, KPI alerts and protection · Gems with fair, evidence-only instructions · the optimisation problem solver · Drive files as context and responsible sharing |
 
 ## Labs
 
-Complete the eight labs in order — each one builds on the output of the one before. The full index is in [labs/README.md](labs/README.md), and tool and account requirements are in [labs/tools.md](labs/tools.md).
+Each lab has its own folder containing:
 
-1. [Set Up and Access Gemini AI in Google Sheets](labs/lab-01-set-up-and-access-gemini-ai-in-google-sheets.md)
-2. [Generate and Explain Formulas with AI](labs/lab-02-generate-and-explain-formulas-with-ai.md)
-3. [Combine and Troubleshoot Formulas with AI](labs/lab-03-combine-and-troubleshoot-formulas-with-ai.md)
-4. [Write Effective Prompts for Spreadsheet Tasks](labs/lab-04-write-effective-prompts-for-spreadsheet-tasks.md)
-5. [Clean, Transform and Organise Data with AI](labs/lab-05-clean-transform-and-organise-data-with-ai.md)
-6. [Summarise and Analyse Your Dataset with AI](labs/lab-06-summarise-and-analyse-your-dataset-with-ai.md)
-7. [Create Tables, Charts and Visualisations with AI](labs/lab-07-create-tables-charts-and-visualisations-with-ai.md)
-8. [Validate AI Output and Apply AI Safely to Work Data](labs/lab-08-validate-ai-output-and-apply-ai-safely-to-work-data.md)
+- an **instruction PDF** with every step and its prompt, sample prompts and the Test It values;
+- `sample-prompts.txt`, with prompts ready to copy;
+- the **mock-data workbook** in `data/`, with a Prompt_Log tab already listing the lab's prompts;
+- for Lab 11, `gem-instructions.txt` and two knowledge documents (job descriptions and a screening rubric).
 
-## Courseware package (v1.1)
+Every prompt is also on one web page that walks through each lab as **Step → Prompt → Step → Prompt**, with one-click Copy buttons: [Lab Prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/). See also the [labs index](labs/README.md).
+
+| # | Lab | Theme | Instructions | Mock data |
+|---:|---|---|---|---|
+| 1 | [Open Gemini and Explore the Q3 Candidate Export](labs/lab-01-gemini-side-panel-and-summaries/Lab-01-Instructions.pdf) | Gemini Side Panel & Summaries | [PDF](labs/lab-01-gemini-side-panel-and-summaries/Lab-01-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-1) | [Q3 applications export](labs/lab-01-gemini-side-panel-and-summaries/data/OrchidBay_Q3_Applications_Export.xlsx) |
+| 2 | [Check the Quality of the Candidate Data with Gemini](labs/lab-02-data-quality-check/Lab-02-Instructions.pdf) | Data Quality Check | [PDF](labs/lab-02-data-quality-check/Lab-02-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-2) | [Quality-check workbook](labs/lab-02-data-quality-check/data/OrchidBay_Q3_Applications_QualityCheck.xlsx) |
+| 3 | [Clean and Prepare the Candidate Data with Gemini Actions](labs/lab-03-data-prep/Lab-03-Instructions.pdf) | Data Prep | [PDF](labs/lab-03-data-prep/Lab-03-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-3) | [Data-prep workbook](labs/lab-03-data-prep/data/OrchidBay_Q3_Applications_Prep.xlsx) |
+| 4 | [Generate, Explain and Fix Screening Formulas](labs/lab-04-formulas-vlookup-countif-and-nested-if/Lab-04-Instructions.pdf) | Formulas: VLOOKUP, COUNTIF & Nested IF | [PDF](labs/lab-04-formulas-vlookup-countif-and-nested-if/Lab-04-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-4) | [Screening formulas](labs/lab-04-formulas-vlookup-countif-and-nested-if/data/OrchidBay_Screening_Formulas.xlsx) |
+| 5 | [Build a Colour-Coded Interview Tracker from Unstructured Notes](labs/lab-05-tables-trackers-and-conditional-formatting/Lab-05-Instructions.pdf) | Tables, Trackers & Conditional Formatting | [PDF](labs/lab-05-tables-trackers-and-conditional-formatting/Lab-05-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-5) | [Interview tracker](labs/lab-05-tables-trackers-and-conditional-formatting/data/OrchidBay_Interview_Tracker.xlsx) |
+| 6 | [Extract and Categorise Candidate Text with the AI Function](labs/lab-06-ai-function-and-fill-with-gemini/Lab-06-Instructions.pdf) | AI Function & Fill with Gemini | [PDF](labs/lab-06-ai-function-and-fill-with-gemini/Lab-06-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-6) | [Candidate profiles](labs/lab-06-ai-function-and-fill-with-gemini/data/OrchidBay_Candidate_Profiles.xlsx) |
+| 7 | [Generate Hiring Insights and Pivot Tables with Gemini](labs/lab-07-data-analysis-and-insights/Lab-07-Instructions.pdf) | Data Analysis & Insights | [PDF](labs/lab-07-data-analysis-and-insights/Lab-07-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-7) | [2026 hiring year to date (720 rows)](labs/lab-07-data-analysis-and-insights/data/OrchidBay_Hiring_2026_YTD.xlsx) |
+| 8 | [Build Charts That Tell the Hiring Story](labs/lab-08-charts-and-visualisation/Lab-08-Instructions.pdf) | Charts & Visualisation | [PDF](labs/lab-08-charts-and-visualisation/Lab-08-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-8) | [Hiring charts](labs/lab-08-charts-and-visualisation/data/OrchidBay_Hiring_Charts.xlsx) |
+| 9 | [Build the Dashboard's Selectors and KPI Formulas](labs/lab-09-dashboard-kpis-and-selectors/Lab-09-Instructions.pdf) | Dashboard KPIs & Selectors | [PDF](labs/lab-09-dashboard-kpis-and-selectors/Lab-09-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-9) | [Dashboard build](labs/lab-09-dashboard-kpis-and-selectors/data/OrchidBay_Dashboard_Build.xlsx) |
+| 10 | [Make the Hiring Dashboard Interactive and Visual](labs/lab-10-interactive-dashboard/Lab-10-Instructions.pdf) | Interactive Dashboard | [PDF](labs/lab-10-interactive-dashboard/Lab-10-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-10) | [Interactive dashboard](labs/lab-10-interactive-dashboard/data/OrchidBay_Dashboard_Interactive.xlsx) |
+| 11 | [Create a Candidate Screener Gem and Use It in Sheets](labs/lab-11-gems/Lab-11-Instructions.pdf) | Gems | [PDF](labs/lab-11-gems/Lab-11-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-11) | [Finalists](labs/lab-11-gems/data/OrchidBay_Finalists.xlsx) · [Gem instructions](labs/lab-11-gems/gem-instructions.txt) · [job descriptions](labs/lab-11-gems/data/gem-knowledge/OrchidBay_Job_Descriptions.docx) · [rubric](labs/lab-11-gems/data/gem-knowledge/OrchidBay_Screening_Rubric.docx) |
+| 12 | [Optimise the Hiring Decision and Share Results Safely](labs/lab-12-optimisation-reporting-and-safe-sharing/Lab-12-Instructions.pdf) | Optimisation, Reporting & Safe Sharing | [PDF](labs/lab-12-optimisation-reporting-and-safe-sharing/Lab-12-Instructions.pdf) · [prompts](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-12) | [Hiring decision](labs/lab-12-optimisation-reporting-and-safe-sharing/data/OrchidBay_Hiring_Decision.xlsx) |
+
+### Before you start
+
+- You need a Google account with Gemini in Google Sheets: a Google Workspace plan with Gemini, or a Google AI Pro or Ultra plan. The **Ask Gemini** (spark) button must appear at the top right of Sheets.
+- Labs 6 and 11 also need the AI function (`=AI`) and Gems on your account.
+- Upload each lab workbook to Google Drive and choose **File > Save as Google Sheets**. Gemini works best on native Google Sheets files.
+- Gemini's features and labels are still rolling out, so some may differ on your screen. Each lab includes troubleshooting tips and fallbacks.
+
+## Courseware package
 
 | Item | Files |
 |---|---|
-| Slides | [PowerPoint](<courseware/Gemini for Google Sheet (C817)-v1.1.pptx>) · [PDF](<courseware/Gemini for Google Sheet (C817)-v1.1.pdf>) |
-| Learner Guide | [Word](<courseware/LG-Gemini for Google Sheet (C817).docx>) · [PDF](<courseware/LG-Gemini for Google Sheet (C817).pdf>) · [Markdown](<LG-Gemini for Google Sheet (C817).md>) |
+| Slide deck | [PowerPoint](<courseware/Gemini for Google Sheet (C817)-v2.0.pptx>) · [PDF](<courseware/Gemini for Google Sheet (C817)-v2.0.pdf>) |
+| Learner Guide | [Word](<courseware/LG-Gemini for Google Sheet (C817).docx>) · [PDF](<courseware/LG-Gemini for Google Sheet (C817).pdf>) |
 | Lesson Plan | [Word](<courseware/LP-Gemini for Google Sheet (C817).docx>) · [PDF](<courseware/LP-Gemini for Google Sheet (C817).pdf>) |
-| Labs | [labs/](labs/README.md) |
+| Labs | [labs/](labs/README.md): 12 lab folders with instruction PDFs, sample prompts and mock data |
+| Lab prompts web page | [docs/prompts/](docs/prompts/index.html), published at [tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/) |
 
-Use synthetic or authorised data only, and never paste confidential or personal data into an AI tool your organisation has not approved.
+The deck, Learner Guide, Lesson Plan, labs and prompts page are all generated from one content source in `.claude/skills/non-wsq-courseware-build/build/`, so they stay aligned. To rebuild them, run `build_courseware.sh` in that folder. The deck's screenshots come from Google Docs Editors Help and are credited on each slide.
 
-## What is public and what is not
+## Distribution boundary
 
-This repository publishes the current slides, Learner Guide, Lesson Plan and labs. Superseded versions, source references and any credentials are kept out of the public repository.
+This repository publishes the current learner-facing courseware, labs and the prompts page. It does not publish superseded versions (`courseware/archive/`), source reference material or credentials. This is a non-WSQ commercial course, so it has no assessment.
+
+## Data notice
+
+All Orchid Bay organisations, people, IDs and values are **fictional training data**, generated for this course, and email addresses use the reserved `example.com` domain. Any resemblance to a real company or person is coincidental. Do not paste real candidates' or employees' personal data into Gemini unless your organisation has approved it.
 
 ## Provider
 
-Developed and delivered by **Tertiary Infotech Academy Pte Ltd** — [Tertiary Courses](https://www.tertiarycourses.com.sg). © Tertiary Infotech Academy Pte Ltd. All rights reserved. Provided for educational use as part of the course [Gemini for Google Sheet (C817)](https://www.tertiarycourses.com.sg/gemini-for-google-sheet.html).
+Developed and delivered by **Tertiary Infotech Academy Pte Ltd** (Tertiary Courses), Singapore · UEN 201200696W
+Course page: <https://www.tertiarycourses.com.sg/gemini-for-google-sheet.html>

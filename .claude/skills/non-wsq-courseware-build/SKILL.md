@@ -41,10 +41,20 @@ In place of the assessment block the deck carries a **"How You'll Learn"** flow
     data_domain.example.py   TEMPLATE → copy to data_domain1.py … data_domainN.py (per-topic labs)
     build_slides.py       generic engine → courseware/<TITLE>-<VER>.pptx  (all-white house style)
     build_lesson_plan.py  generic engine → courseware/LP-<TITLE>.docx
-    build_learner_guide.py generic engine → LG-<TITLE>.md (repo root) + courseware/LG-<TITLE>.docx
+    build_learner_guide.py generic engine → courseware/LG-<TITLE>.docx (Markdown mirror only if LG_MARKDOWN=1;
+                          C817 publishes no .md Learner Guide)
+    mock_data.py          C817: deterministic Orchid Bay HR datasets + EXPECTED values quoted in every Test It
+    lab_prompts.py        parses step code blocks (ASK GEMINI / INSERT / ACTION / FORMULA / AI FUNCTION / GEM /
+                          GEMINI APP / CHECK / LOG) into ordered prompts A, B, C ...
+    prompt_explanations.py indexes each lab's explain / formulas / sample_explain (kept beside the lab in data_domainN.py)
+    build_labs.py         labs/lab-NN-<theme>/ : Lab-NN-Instructions.pdf, sample-prompts.txt, data/ (+ extra files)
+    build_prompts_page.py docs/prompts/index.html : Step -> Prompt -> Step -> Prompt page with Copy buttons (GitHub Pages)
     prodoc.py             shared DOCX helpers (cover, version-control record, TOC, page numbers)
     inject_toc.py         page-numbered TOC injector (LibreOffice can't update TOC fields headless)
     build_courseware.sh   orchestrator: generate → render PDF → inject TOC → re-render
+
+Screenshots for the deck live in courseware/assets/screenshots/ (from Google's official help page, credited on
+each slide via course_data.SHOT_CREDIT) and are referenced from section briefs (`shots`) and INTERFACE_TOUR.
 ```
 
 ## Fully generic — no course hard-coded

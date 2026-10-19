@@ -14,3 +14,20 @@ Thumbs.db
 
 # Superseded courseware versions (only the current version is published)
 archive/
+
+# Private - never pushed
+assessment/
+**/reference/
+**/FG_*
+**/FG-*
+**/Assessment_Plan_*
+**/AP-*
+
+# Security - never pushed
+.env
+.env.*
+
+# Regenerated dependencies / lock files
+node_modules/
+.venv/
+~$*

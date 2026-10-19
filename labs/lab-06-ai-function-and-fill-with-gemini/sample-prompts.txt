@@ -1,0 +1,66 @@
+Gemini for Google Sheet (C817) — Lab 6: Extract and Categorise Candidate Text with the AI Function
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-6
+
+[1] AI function
+=AI("Does this candidate mention SQL? Answer Yes or No.", D2)
+
+[2] AI function
+=AI("Write a polite two-sentence email inviting this candidate to a second interview.", B2:C2)
+
+[3] Categorise
+=AI("Classify the seniority of this candidate as Junior, Mid or Senior based on years of experience.", D2)
+
+[4] Side panel
+Which five candidates have the most positive feedback? Show their names and positions.
+
+[5] Side panel
+Summarise the main concerns interviewers raised, with the number of candidates for each.
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Candidate_Profiles (Google Sheets copy)
+Tabs      : About_This_Data | Profiles (30 rows) | Answer_Key | Checks | Prompt_Log
+Empty     : F Notice_Weeks_AI | G Feedback_Sentiment_AI | H Manager_Summary_AI
+
+[Step 2]
+AI FUNCTION:
+=AI("Extract the notice period in weeks as a whole number. Output only the number. Use 0 for immediately, 4 for one month, 8 for two months and 12 for three months.", D2)
+
+[Step 3]
+AI FUNCTION:
+=AI("Classify this interview feedback as Positive, Mixed or Negative. Output one word only.", E2)
+
+[Step 4]
+AI FUNCTION:
+=AI("Write a one-sentence summary of this candidate for the hiring manager, using only the summary and feedback. Do not mention age, gender, race, religion or nationality.", C2:E2)
+
+[Step 5]
+CHECK:
+Notice matches      =SUMPRODUCT(--(TO_TEXT(Profiles!F2:F31)=TO_TEXT(Answer_Key!B2:B31)))
+Sentiment matches   =SUMPRODUCT(--(TRIM(Profiles!G2:G31)=Answer_Key!C2:C31))
+Positive (AI)       =COUNTIF(Profiles!G2:G31,"Positive")
+Mixed (AI)          =COUNTIF(Profiles!G2:G31,"Mixed")
+
+[Step 6]
+ASK GEMINI:
+Compare Profiles column G with Answer_Key column C. Which candidates don't match, and what in the Interview_Feedback text could have caused each difference?
+
+[Step 7]
+AI FUNCTION:
+=AI("List the skills mentioned in this summary, comma separated, in the same order.", D2)
+
+[Step 8]
+INSERT:
+Group the Interview_Feedback on the Profiles tab into themes and count how many candidates fall into each theme. Show the result as a table with one example per theme.
+
+ASK GEMINI:
+Do any of the summaries in column H mention personal characteristics or anything that should not be used in a hiring decision?
+
+[Step 9]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

@@ -1,0 +1,74 @@
+Gemini for Google Sheet (C817) — Lab 7: Generate Hiring Insights and Pivot Tables with Gemini
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-7
+
+[1] Trend
+How did the number of hires change from Q1 to Q2 to Q3 2026?
+
+[2] Compare
+Compare the average Screening_Score of hired and rejected candidates.
+
+[3] Pivot
+Create a pivot table that shows the number of hires by Recruiter and Month.
+
+[4] Regression
+How can I show regression and prediction of monthly applications?
+
+[5] Explain
+Explain this analysis like I'm a hiring manager with no data background.
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Hiring_2026_YTD (Google Sheets copy)
+Tabs      : About_This_Data | Applications (720 rows) | Jobs | Source_Costs | Prompt_Log
+Period    : applications 2026-01-01 to 2026-09-26
+
+[Step 2]
+ASK GEMINI:
+What analysis can you help me perform with this sheet?
+
+[Step 3]
+ASK GEMINI:
+Identify trends in the number of applications by Month. Which month had the most applications, and which had the fewest?
+
+[Step 4]
+ASK GEMINI:
+For each Source, show the applications, hires (Stage is Hired) and hire rate. Which source has the best hire rate, and which brings in the most hires?
+
+[Step 5]
+ACTION:
+Create a pivot table on a new sheet that shows the count of Candidate_ID with Source in rows and Stage in columns.
+
+CHECK:
+LinkedIn hired      =COUNTIFS(Applications!G2:G721,"LinkedIn",Applications!M2:M721,"Hired")
+Referral hired      =COUNTIFS(Applications!G2:G721,"Referral",Applications!M2:M721,"Hired")
+All applications    =COUNTA(Applications!A2:A721)
+
+[Step 6]
+ASK GEMINI:
+What is the average Days_To_Hire for each Position? Which role takes the longest to fill?
+
+ACTION:
+Create a pivot table that shows the average Days_To_Hire by Position, sorted from highest to lowest.
+
+CHECK:
+HR Executive avg   =AVERAGEIFS(Applications!P2:P721,Applications!F2:F721,"HR Executive",Applications!M2:M721,"Hired")
+
+[Step 7]
+ASK GEMINI:
+Using the Applications and Source_Costs tabs, calculate the total cost and the cost per hire for each Source. Which source gives the cheapest hires?
+
+[Step 8]
+ASK GEMINI:
+Write five insights for the Head of Talent from this data. Give the number behind each insight and one recommended action.
+
+ASK GEMINI:
+Using Google Search, what is a typical time to hire for professional roles in Singapore? List your sources.
+
+[Step 9]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

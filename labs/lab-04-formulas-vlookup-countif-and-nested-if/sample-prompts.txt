@@ -1,0 +1,70 @@
+Gemini for Google Sheet (C817) — Lab 4: Generate, Explain and Fix Screening Formulas
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-4
+
+[1] Lookup
+Create a formula that returns the Hiring_Manager for the Job_ID in E2 from the Jobs tab (A2:J9).
+
+[2] Date
+Create a formula for the number of days between Applied_Date in D2 and the report date in Settings!B1.
+
+[3] Text
+Create a formula that returns TRUE if Key_Skills in J2 contains "SQL".
+
+[4] Count
+Create a formula that counts Above budget candidates for each Position.
+
+[5] Explain
+Explain the difference between VLOOKUP and XLOOKUP, and when to use each.
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Screening_Formulas (Google Sheets copy)
+Tabs      : About_This_Data | Applications | Jobs | Settings | Checks | Prompt_Log
+Settings  : B1 report date 2026-09-30 | B2 pass mark 70 | B3 possible mark 60
+
+[Step 2]
+Before    : =VLOOKUP(E2,Jobs!$A$2:$H$9,9,FALSE)  ->  #REF!
+After     : =VLOOKUP(E2,Jobs!$A$2:$H$9,8,FALSE)  ->  S$6,500
+
+ASK GEMINI:
+Explain why the formula in Q2 shows #REF! and give me the corrected formula.
+
+[Step 3]
+FORMULA:
+Create a formula for R2 that looks up the Job_ID in E2 on the Jobs tab (A2:H9) and returns Min_Years.
+
+[Step 4]
+FORMULA:
+Create a formula for S2 that returns "Within budget" if Expected_Salary in K2 is less than or equal to Budget_Max in Q2, otherwise "Above budget".
+
+[Step 5]
+FORMULA:
+Create a formula for T2: if Screening_Score in M2 is at least the pass mark in Settings!B2 and Years_Experience in H2 is at least Min_Years in R2, return "Strong"; otherwise, if M2 is at least Settings!B3, return "Possible"; otherwise return "Not suitable".
+
+[Step 6]
+ASK GEMINI:
+Explain the formula in T2 step by step, and tell me what it returns for the candidate in row 2 and why.
+
+[Step 7]
+FORMULA:
+1) Create a formula that counts how many cells in Applications!T2:T241 are "Strong".
+2) Create a formula that counts the rows on Applications where Position is "Data Analyst" and Screen_Result is "Strong".
+
+[Step 8]
+CHECK:
+Possible          =COUNTIF(Applications!T2:T241,"Possible")
+Not suitable      =COUNTIF(Applications!T2:T241,"Not suitable")
+All results       =COUNTA(Applications!T2:T241)
+Above budget      =SUMPRODUCT(--(Applications!K2:K241>Applications!Q2:Q241))
+
+ASK GEMINI:
+If I change the pass mark in Settings!B2 from 70 to 75, how many candidates will be Strong?
+
+[Step 9]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

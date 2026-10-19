@@ -1,0 +1,69 @@
+Gemini for Google Sheet (C817) — Lab 9: Build the Dashboard's Selectors and KPI Formulas
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-9
+
+[1] KPI
+Create a formula for the offer acceptance rate: Hired divided by Offered plus Hired, for the selected Position and Source.
+
+[2] KPI
+Create a formula that returns the most common Source for the selected Position.
+
+[3] Selector
+Create a dropdown in C5 with the values 2026-01 to 2026-09.
+
+[4] Explain
+Explain the formula in B7 to someone who has never used COUNTIFS.
+
+[5] Check
+Which formulas on the Dashboard tab would break if a new Position were added?
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Dashboard_Build (Google Sheets copy)
+Tabs      : About_This_Data | Dashboard | Applications (720 rows) | Jobs | Lists | Prompt_Log
+Dashboard : C3 Position, C4 Source, KPI labels B6:H6, tables at B10, E10 and I10
+
+[Step 2]
+ACTION:
+1) On the Dashboard tab, create a dropdown in C3 with the values from Lists!A2:A10.
+2) On the Dashboard tab, create a dropdown in C4 with the values from Lists!B2:B9.
+
+[Step 3]
+FORMULA:
+Create a formula for Dashboard!B7 that counts the rows on Applications (rows 2-721) where Position in column F equals C3 and Source in column G equals C4. If C3 or C4 is "All", count every value for that column.
+
+[Step 4]
+FORMULA:
+1) Create a formula for C7: the same count as B7, but only rows where Interview_Score (column L) is not blank.
+2) Create a formula for D7: the same count as B7, but only rows where Stage (column M) is Offered or Hired.
+3) Create a formula for E7: the same count as B7, but only rows where Stage (column M) is Hired.
+
+[Step 5]
+FORMULA:
+1) Create a formula for F7 that divides Hires in E7 by Applications in B7, showing 0 if B7 is 0.
+2) Create a formula for G7: the average Screening_Score (column K) for the rows that match C3 and C4.
+3) Create a formula for H7: the average Days_To_Hire (column P) for Hired rows that match C3 and C4, showing "-" if there are none.
+
+[Step 6]
+ACTION:
+Fill Dashboard!C11:C14 with the formulas =B7, =C7, =D7 and =E7.
+
+FORMULA:
+1) Create a formula for F11 that counts applications where Month (Applications column D) equals E11, using the same Position and Source filters as B7.
+2) Create a formula for G11: the same as F11 but only Hired rows.
+3) Create a formula for J11 that counts Hired rows where Source equals I11 and Position matches C3 (All means any).
+
+[Step 7]
+ASK GEMINI:
+On the Dashboard tab, Position is set in C3. Check the KPI row B7:H7 against the Applications tab - are the counts and averages correct for that position?
+
+CHECK:
+SE hires   =COUNTIFS(Applications!F2:F721,"Software Engineer",Applications!M2:M721,"Hired")
+
+[Step 8]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

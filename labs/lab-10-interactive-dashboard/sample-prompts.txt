@@ -1,0 +1,53 @@
+Gemini for Google Sheet (C817) — Lab 10: Make the Hiring Dashboard Interactive and Visual
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-10
+
+[1] Image
+Create an image of a simple header banner with an orchid and the words Hiring Dashboard.
+
+[2] Layout
+Suggest a clean layout for this dashboard: where should the KPIs, charts and selectors go?
+
+[3] Alert
+Highlight the Hires cells in the monthly table that are 0 in light grey.
+
+[4] Number format
+Format F7 as a percentage with one decimal place and G7:H7 with one decimal place.
+
+[5] Review
+Review this dashboard for a colleague: what is unclear, and what would you add?
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Dashboard_Interactive (Google Sheets copy)
+Dashboard : C3 Position and C4 Source dropdowns (All) | KPIs B7:H7 | tables B10, E10, I10
+Check     : B7 = 720 and E7 = 41 with All / All
+
+[Step 2]
+ASK GEMINI:
+How do I insert a chart from a range on this tab so that it updates when the values in the range change?
+
+[Step 4]
+ACTION:
+Create a dropdown in Dashboard!C5 with the options Applications and Hires.
+
+FORMULA:
+Create a formula for H11 that returns F11 when C5 is "Applications" and G11 when C5 is "Hires".
+
+[Step 5]
+ACTION:
+1) Highlight Dashboard!F7 in light red when it is below 5%.
+2) Highlight Dashboard!H7 in amber when it is more than 35.
+3) Add a white-to-green colour scale to Dashboard!J11:J17.
+
+[Step 6]
+ASK GEMINI:
+Summarise what the Dashboard tab shows in five bullet points for the Head of Talent, using the KPI row and the three tables. Mention the best month, the best source for hires and one risk.
+
+[Step 7]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

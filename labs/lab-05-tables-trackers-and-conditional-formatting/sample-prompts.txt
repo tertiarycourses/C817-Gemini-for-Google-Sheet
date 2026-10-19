@@ -1,0 +1,73 @@
+Gemini for Google Sheet (C817) — Lab 5: Build a Colour-Coded Interview Tracker from Unstructured Notes
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-5
+
+[1] Table
+Create a table of interview questions for a Data Analyst, with columns Question, Skill tested and What a good answer includes.
+
+[2] Dropdown
+Convert the Recruiter column on the Shortlist tab to a dropdown with values from the same column.
+
+[3] Highlight
+Highlight the Shortlist rows where Stage is Offered in light purple.
+
+[4] Freeze
+Freeze the top row and the first two columns of the Shortlist tab.
+
+[5] Help
+Teach me how to use conditional formatting with a custom formula.
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Interview_Tracker (Google Sheets copy)
+Tabs      : About_This_Data | Interview_Notes (12 lines) | Shortlist (43 rows) | Prompt_Log
+
+[Step 2]
+INSERT:
+Using the notes on the Interview_Notes tab, create a table with the columns Date, Time, Candidate, Candidate_ID, Position, Panel, Format and Status. Status must be one of Scheduled, Completed, No-show or Rescheduled.
+
+FOLLOW-UP:
+Add two empty columns at the end: Outcome and Reference_Checked.
+
+[Step 3]
+ACTION:
+1) Make the Status column a dropdown with the options Scheduled, Completed, No-show and Rescheduled.
+2) Create a dropdown in the Outcome column with the options Pending, Advance, Hold and Reject.
+3) Insert checkboxes in the Reference_Checked column, unchecked by default.
+
+[Step 4]
+ACTION:
+Colour-code the Status column: Completed light green, Scheduled light blue, Rescheduled amber and No-show light red.
+
+[Step 5]
+ACTION:
+1) On the Shortlist tab, highlight the rows where Screening_Score is 85 or more in light green.
+2) Make Expected_Salary bold red when it is greater than Budget_Max on the same row.
+3) Add a colour scale to Interview_Score from red for low values to green for high values.
+
+[Step 6]
+ASK GEMINI:
+On the Shortlist tab, how many rows have a Screening_Score of 80 or more? Which positions are they for?
+
+CHECK:
+Score 80 or more   =COUNTIF(Shortlist!E2:E44,">=80")
+Above budget       =SUMPRODUCT(--(Shortlist!G2:G44>Shortlist!H2:H44))
+
+[Step 7]
+ACTION:
+Clean up the Shortlist tracker: make the Stage column a dropdown with Shortlisted, Interviewed and Offered; add a new column Notice_End at the end with a formula for 30 September 2026 plus Notice_Weeks weeks, formatted as a date; add a checkbox column called Contacted; and highlight in light orange the rows where Notice_Weeks is more than 8.
+
+[Step 8]
+INSERT:
+Create an onboarding checklist tracker for a new hire in Singapore, with the columns Task, Owner, Days_Before_Start, Status and Done. Include 10 typical tasks. Make Done a checkbox.
+
+FOLLOW-UP:
+Add 3 tasks for laptop, system access and security training, owned by IT.
+
+[Step 9]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

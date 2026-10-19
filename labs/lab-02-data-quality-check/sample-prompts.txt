@@ -1,0 +1,70 @@
+Gemini for Google Sheet (C817) — Lab 2: Check the Quality of the Candidate Data with Gemini
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-2
+
+[1] Profile
+Which columns have blank cells, and how many blanks does each have?
+
+[2] Validate
+Are there any Applied_Date values outside July to September 2026?
+
+[3] Validate
+Do any rows have a Position that doesn't match the Position for their Job_ID on the Jobs tab?
+
+[4] Highlight
+Highlight Full_Name cells that are all in capital letters in light purple.
+
+[5] Explain
+Why is a salary stored as text a problem when I calculate an average?
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Q3_Applications_QualityCheck (Google Sheets copy)
+Tabs      : About_This_Data | Applications | Jobs | Checks | Prompt_Log
+Rule      : find and flag only - do not fix anything in this lab
+
+[Step 2]
+ASK GEMINI:
+Check the Applications tab for data-quality problems: duplicate Candidate_IDs, the same Source spelt different ways, missing or invalid emails, Expected_Salary values stored as text, and impossible values.
+Don't change anything. List each problem with how many rows it affects.
+
+[Step 3]
+ASK GEMINI:
+Which Candidate_IDs appear more than once? Are those rows exact copies of each other?
+
+ACTION:
+Highlight duplicate values in the Candidate_ID column in orange.
+
+[Step 4]
+ASK GEMINI:
+List every distinct value in the Source column exactly as it is spelt, including spaces and capital letters, with a count of each.
+
+[Step 5]
+ACTION:
+1) Highlight cells in the Email column that are blank or do not contain @ in light red.
+2) Highlight Expected_Salary cells that contain text instead of a number in yellow.
+3) Highlight Years_Experience values below 0 in red.
+
+[Step 6]
+FORMULA:
+Create a formula that counts the unique Candidate_IDs in Applications column A, rows 2 to 244.
+
+CHECK:
+Total rows            =COUNTA(Applications!A2:A244)
+Unique IDs            =COUNTUNIQUE(Applications!A2:A244)
+Blank emails          =COUNTBLANK(Applications!C2:C244)
+Emails without @      =COUNTIFS(Applications!C2:C244,"<>",Applications!C2:C244,"<>*@*")
+Text salaries         =SUMPRODUCT(--ISTEXT(Applications!K2:K244))
+Negative experience   =COUNTIF(Applications!H2:H244,"<0")
+
+[Step 7]
+INSERT:
+Write a short data-quality report for the recruitment manager: each issue, how many rows it affects, why it matters for screening, and the fix you recommend. Use a table.
+
+[Step 8]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

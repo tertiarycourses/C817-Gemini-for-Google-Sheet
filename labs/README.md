@@ -1,24 +1,44 @@
-# Labs — Gemini for Google Sheet (C817)
+# Gemini for Google Sheet — Hands-On Labs
 
-**Course Code:** C817  |  **Version v1.0 · 27 July 2026**
+12 labs across 3 topics · 1 day · 7.5 instructional hours
 
-All 8 labs work a **single connected dataset** — a messy quarter of orders for the fictional **Riverside Supplies** — which you clean, analyse and chart with Gemini AI across the day, starting in Lab 1 and validating in Lab 8. Wherever possible, use your own non-confidential data; the Riverside Supplies sample sheet is provided for everyone to follow along. There is **no assessment** — each lab verifies itself with a 'Test it' step.
+Every lab has its own folder containing an **instruction PDF with sample prompts**, a copy-ready `sample-prompts.txt`, and a `data/` folder with the **mock HR / recruitment workbook**. All data belongs to *Orchid Bay Talent Partners*, a fictional Singapore recruitment and HR firm, and follows one storyline: its Q3 2026 hiring drive, from raw export to hiring decision.
 
-| Topic | Lab | Title |
-|---|---:|---|
-| 01 | 01 | [Set Up and Access Gemini AI in Google Sheets](lab-01-set-up-and-access-gemini-ai-in-google-sheets.md) |
-| 01 | 02 | [Generate and Explain Formulas with AI](lab-02-generate-and-explain-formulas-with-ai.md) |
-| 01 | 03 | [Combine and Troubleshoot Formulas with AI](lab-03-combine-and-troubleshoot-formulas-with-ai.md) |
-| 01 | 04 | [Write Effective Prompts for Spreadsheet Tasks](lab-04-write-effective-prompts-for-spreadsheet-tasks.md) |
-| 02 | 05 | [Clean, Transform and Organise Data with AI](lab-05-clean-transform-and-organise-data-with-ai.md) |
-| 02 | 06 | [Summarise and Analyse Your Dataset with AI](lab-06-summarise-and-analyse-your-dataset-with-ai.md) |
-| 02 | 07 | [Create Tables, Charts and Visualisations with AI](lab-07-create-tables-charts-and-visualisations-with-ai.md) |
-| 02 | 08 | [Validate AI Output and Apply AI Safely to Work Data](lab-08-validate-ai-output-and-apply-ai-safely-to-work-data.md) |
+**Prompts web page:** every lab's prompts with one-click Copy buttons — [https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/](https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/)
 
-## Tools
+Upload each workbook to Google Drive and choose **File > Save as Google Sheets** before you open Gemini. Work through the labs in order. Each lab opens its own workbook, so you can rejoin at any lab.
 
-See [tools.md](tools.md) for the accounts and apps used across the labs.
+
+## Topic 1 — Fundamentals of Google Sheet
+
+| # | Theme | Lab | Instructions | Mock data | You Build |
+|---|-------|-----|--------------|-----------|-----------|
+| 1 | Gemini Side Panel & Summaries | [Open Gemini and Explore the Q3 Candidate Export](lab-01-gemini-side-panel-and-summaries/Lab-01-Instructions.pdf) | [PDF](lab-01-gemini-side-panel-and-summaries/Lab-01-Instructions.pdf) · [prompts](lab-01-gemini-side-panel-and-summaries/sample-prompts.txt) | [OrchidBay_Q3_Applications_Export.xlsx](lab-01-gemini-side-panel-and-summaries/data/OrchidBay_Q3_Applications_Export.xlsx) | OrchidBay_Q3_Applications_Export as a Google Sheets file with an inserted Applications_by_Position table, a check formula that confirms Gemini's stage count, and a filled Prompt_Log |
+| 2 | Data Quality Check | [Check the Quality of the Candidate Data with Gemini](lab-02-data-quality-check/Lab-02-Instructions.pdf) | [PDF](lab-02-data-quality-check/Lab-02-Instructions.pdf) · [prompts](lab-02-data-quality-check/sample-prompts.txt) | [OrchidBay_Q3_Applications_QualityCheck.xlsx](lab-02-data-quality-check/data/OrchidBay_Q3_Applications_QualityCheck.xlsx) | OrchidBay_Q3_Applications_QualityCheck with duplicates and problem cells highlighted, a Checks tab of formulas confirming each issue count, an inserted data-quality report and a filled Prompt_Log |
+| 3 | Data Prep | [Clean and Prepare the Candidate Data with Gemini Actions](lab-03-data-prep/Lab-03-Instructions.pdf) | [PDF](lab-03-data-prep/Lab-03-Instructions.pdf) · [prompts](lab-03-data-prep/sample-prompts.txt) | [OrchidBay_Q3_Applications_Prep.xlsx](lab-03-data-prep/data/OrchidBay_Q3_Applications_Prep.xlsx) | OrchidBay_Q3_Applications_Prep as a clean table: 240 rows, seven Source values, numeric S$ salaries, a Name_Clean column, frozen headers, a Stage dropdown and Hired rows highlighted |
+| 4 | Formulas: VLOOKUP, COUNTIF & Nested IF | [Generate, Explain and Fix Screening Formulas](lab-04-formulas-vlookup-countif-and-nested-if/Lab-04-Instructions.pdf) | [PDF](lab-04-formulas-vlookup-countif-and-nested-if/Lab-04-Instructions.pdf) · [prompts](lab-04-formulas-vlookup-countif-and-nested-if/sample-prompts.txt) | [OrchidBay_Screening_Formulas.xlsx](lab-04-formulas-vlookup-countif-and-nested-if/data/OrchidBay_Screening_Formulas.xlsx) | OrchidBay_Screening_Formulas with working Budget_Max, Min_Years, Salary_Fit and Screen_Result columns, a Checks tab of COUNTIF/COUNTIFS results that reconcile to 240, and a filled Prompt_Log |
+
+## Topic 2 — Data Analytics and Visualization
+
+| # | Theme | Lab | Instructions | Mock data | You Build |
+|---|-------|-----|--------------|-----------|-----------|
+| 5 | Tables, Trackers & Conditional Formatting | [Build a Colour-Coded Interview Tracker from Unstructured Notes](lab-05-tables-trackers-and-conditional-formatting/Lab-05-Instructions.pdf) | [PDF](lab-05-tables-trackers-and-conditional-formatting/Lab-05-Instructions.pdf) · [prompts](lab-05-tables-trackers-and-conditional-formatting/sample-prompts.txt) | [OrchidBay_Interview_Tracker.xlsx](lab-05-tables-trackers-and-conditional-formatting/data/OrchidBay_Interview_Tracker.xlsx) | OrchidBay_Interview_Tracker with an Interview_Tracker tab (12 interviews, dropdowns, checkboxes, colour-coded Status), a flagged Shortlist tab and a new Onboarding_Checklist tab |
+| 6 | AI Function & Fill with Gemini | [Extract and Categorise Candidate Text with the AI Function](lab-06-ai-function-and-fill-with-gemini/Lab-06-Instructions.pdf) | [PDF](lab-06-ai-function-and-fill-with-gemini/Lab-06-Instructions.pdf) · [prompts](lab-06-ai-function-and-fill-with-gemini/sample-prompts.txt) | [OrchidBay_Candidate_Profiles.xlsx](lab-06-ai-function-and-fill-with-gemini/data/OrchidBay_Candidate_Profiles.xlsx) | OrchidBay_Candidate_Profiles with AI-filled Notice_Weeks_AI, Feedback_Sentiment_AI, Manager_Summary_AI and Top_Skills columns, a Checks tab measuring accuracy, and an inserted feedback-themes table |
+| 7 | Data Analysis & Insights | [Generate Hiring Insights and Pivot Tables with Gemini](lab-07-data-analysis-and-insights/Lab-07-Instructions.pdf) | [PDF](lab-07-data-analysis-and-insights/Lab-07-Instructions.pdf) · [prompts](lab-07-data-analysis-and-insights/sample-prompts.txt) | [OrchidBay_Hiring_2026_YTD.xlsx](lab-07-data-analysis-and-insights/data/OrchidBay_Hiring_2026_YTD.xlsx) | OrchidBay_Hiring_2026_YTD with two pivot tables (source by stage, days to hire by position), a Checks area of formulas, and a Google Doc of insights exported from Gemini |
+| 8 | Charts & Visualisation | [Build Charts That Tell the Hiring Story](lab-08-charts-and-visualisation/Lab-08-Instructions.pdf) | [PDF](lab-08-charts-and-visualisation/Lab-08-Instructions.pdf) · [prompts](lab-08-charts-and-visualisation/sample-prompts.txt) | [OrchidBay_Hiring_Charts.xlsx](lab-08-charts-and-visualisation/data/OrchidBay_Hiring_Charts.xlsx) | OrchidBay_Hiring_Charts with four inserted Gemini charts, one linked chart built from a pivot table, finding-based titles and alt text |
+
+## Topic 3 — Interactive Dashboard
+
+| # | Theme | Lab | Instructions | Mock data | You Build |
+|---|-------|-----|--------------|-----------|-----------|
+| 9 | Dashboard KPIs & Selectors | [Build the Dashboard's Selectors and KPI Formulas](lab-09-dashboard-kpis-and-selectors/Lab-09-Instructions.pdf) | [PDF](lab-09-dashboard-kpis-and-selectors/Lab-09-Instructions.pdf) · [prompts](lab-09-dashboard-kpis-and-selectors/sample-prompts.txt) | [OrchidBay_Dashboard_Build.xlsx](lab-09-dashboard-kpis-and-selectors/data/OrchidBay_Dashboard_Build.xlsx) | OrchidBay_Dashboard_Build with Position and Source dropdowns in C3:C4, a KPI row (B7:H7) and funnel, monthly and source tables that all respond to the dropdowns |
+| 10 | Interactive Dashboard | [Make the Hiring Dashboard Interactive and Visual](lab-10-interactive-dashboard/Lab-10-Instructions.pdf) | [PDF](lab-10-interactive-dashboard/Lab-10-Instructions.pdf) · [prompts](lab-10-interactive-dashboard/sample-prompts.txt) | [OrchidBay_Dashboard_Interactive.xlsx](lab-10-interactive-dashboard/data/OrchidBay_Dashboard_Interactive.xlsx) | OrchidBay_Dashboard_Interactive: a protected Dashboard tab with three linked charts, a metric switch, KPI alerts and a Gemini summary exported to Google Docs |
+| 11 | Gems | [Create a Candidate Screener Gem and Use It in Sheets](lab-11-gems/Lab-11-Instructions.pdf) | [PDF](lab-11-gems/Lab-11-Instructions.pdf) · [prompts](lab-11-gems/sample-prompts.txt) | [OrchidBay_Finalists.xlsx](lab-11-gems/data/OrchidBay_Finalists.xlsx)<br>[OrchidBay_Job_Descriptions.docx](lab-11-gems/data/gem-knowledge/OrchidBay_Job_Descriptions.docx)<br>[OrchidBay_Screening_Rubric.docx](lab-11-gems/data/gem-knowledge/OrchidBay_Screening_Rubric.docx)<br>[gem-instructions.txt](lab-11-gems/gem-instructions.txt) | An 'Orchid Bay Candidate Screener' Gem with instructions and two knowledge files, and OrchidBay_Finalists with a Gem_Screening tab, checks and a Hiring_Manager_Decision dropdown |
+| 12 | Optimisation, Reporting & Safe Sharing | [Optimise the Hiring Decision and Share Results Safely](lab-12-optimisation-reporting-and-safe-sharing/Lab-12-Instructions.pdf) | [PDF](lab-12-optimisation-reporting-and-safe-sharing/Lab-12-Instructions.pdf) · [prompts](lab-12-optimisation-reporting-and-safe-sharing/sample-prompts.txt) | [OrchidBay_Hiring_Decision.xlsx](lab-12-optimisation-reporting-and-safe-sharing/data/OrchidBay_Hiring_Decision.xlsx) | OrchidBay_Hiring_Decision with a Selected checkbox column, check formulas that prove the constraints, a recommendation in Google Docs and a separate Share_View file shared view-only |
 
 ---
 
-*Gemini for Google Sheet (C817) · C817 · Version v1.0 · © 2026 Tertiary Infotech Academy Pte Ltd*
+> Use only the supplied fictional Orchid Bay data or information you are authorised to process. Do not paste credentials, confidential business material or real candidates' or employees' personal data into Gemini, the AI function or a Gem unless your organisation has approved it.
+
+
+_Tertiary Infotech Academy Pte Ltd · C817 · v2.0 (19 October 2026)_

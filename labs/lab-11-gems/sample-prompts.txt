@@ -1,0 +1,75 @@
+Gemini for Google Sheet (C817) — Lab 11: Create a Candidate Screener Gem and Use It in Sheets
+Sample prompts: use the app labelled in each step. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-11
+
+[1] Gem
+Write three interview questions for the weakest rubric area of each Advance candidate.
+
+[2] Gem
+Rank the Software Engineer finalists by Total and explain the ranking in one sentence each.
+
+[3] Gem
+Draft a polite email to a candidate you recommend we Decline, without giving scores.
+
+[4] Gemini app
+Improve my Gem instructions so the Reason column always quotes the evidence.
+
+[5] Side panel
+What are the main points of OrchidBay_Screening_Rubric?
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+Drive     : OrchidBay_Finalists (Sheets) | OrchidBay_Job_Descriptions (Docs) | OrchidBay_Screening_Rubric (Docs)
+Finalists : 16 rows - four each for Data Analyst, Software Engineer, Customer Success Executive, Finance Associate
+
+[Step 2]
+GEMINI APP:
+PERSONA
+You are the Orchid Bay Candidate Screener, a careful and fair recruitment analyst at Orchid Bay Talent Partners, a Singapore recruitment and HR firm.
+
+TASK
+Screen candidates for a role against the job description and the screening rubric in your knowledge files, and recommend Advance, Hold or Decline for each one.
+
+CONTEXT
+- Use only two sources: the candidate's row (Years_Experience, Key_Skills, Expected_Salary, Budget_Max, Notice_Weeks, Final_Interview_Score, Candidate_Summary) and the job description for the candidate's Position.
+- Score each rubric criterion from 0 to 4 exactly as the rubric defines it, then add them up to a total out of 20.
+- A must-have skill counts only if it appears in Key_Skills or Candidate_Summary.
+- Never use or guess age, gender, race, religion, nationality, marital status or health. Do not treat a name or a school as evidence of ability.
+- If information is missing, say "not enough information". Do not guess.
+- Your recommendation supports the hiring manager. A person makes the hiring decision.
+
+FORMAT
+Return one table with these columns: Candidate_ID, Position, Must-have gaps, Skills, Experience, Interview, Salary fit, Availability, Total /20, Recommendation, Reason (one line, evidence only).
+After the table, list any candidate where you were unsure and why.
+
+[Step 3]
+GEMINI APP:
+Screen this candidate for the Data Analyst role:
+CAN-26693 | Data Analyst | 4 years | Key_Skills: Excel; Google Workspace; SQL; Stakeholder Management | Expected_Salary S$4,700 | Budget_Max S$6,500 | Notice_Weeks 8 | Final_Interview_Score 3.2
+
+[Step 4]
+GEM:
+Screen the four Data Analyst finalists on the Finalists tab using the rubric. Identify candidates by Candidate_ID only and ignore Full_Name. Return the table in your standard format.
+
+[Step 5]
+GEM:
+Now screen the Software Engineer, Customer Success Executive and Finance Associate finalists in the same format.
+
+[Step 6]
+CHECK:
+Above budget   =SUMPRODUCT(--(Finalists!F2:F17>Finalists!G2:G17))
+
+GEM:
+For each recommendation, which pieces of information did you use? Did you use anything other than skills, experience, interview score, salary and notice period?
+
+[Step 7]
+ACTION:
+Add a column called Hiring_Manager_Decision at the end of the Data Analyst table on the Gem_Screening tab, with a dropdown of Advance, Hold and Decline.
+
+[Step 8]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

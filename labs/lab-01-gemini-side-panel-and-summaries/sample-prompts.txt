@@ -1,0 +1,66 @@
+Gemini for Google Sheet (C817) — Lab 1: Open Gemini and Explore the Q3 Candidate Export
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-1
+
+[1] Summary
+Give me a five-bullet summary of this candidate data for the Head of Talent.
+
+[2] Question
+Which Source brought in the most applications?
+
+[3] Question
+Which recruiter owns the most applications, and for which positions?
+
+[4] Help
+How do I freeze the header row in Google Sheets?
+
+[5] Insight
+What's interesting about this data? Give three observations with the numbers behind them.
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Q3_Applications_Export (Google Sheets copy, not .xlsx)
+Tabs      : About_This_Data | Applications | Jobs | Prompt_Log
+Gemini    : side panel open on the right
+
+[Step 2]
+ASK GEMINI:
+Summarize this spreadsheet. What does one row on the Applications tab represent, and what time period does it cover?
+
+[Step 3]
+ASK GEMINI:
+Describe each column on the Applications tab in one line, and tell me how many rows of data there are.
+
+[Step 4]
+INSERT:
+Using the Applications and Jobs tabs, make a table of each Position with the number of applications and the number of Openings.
+
+FOLLOW-UP:
+Add a column Applications_per_Opening and sort the table from highest to lowest.
+
+[Step 5]
+ASK GEMINI:
+How many candidates are at each Stage? Which stage has the most candidates?
+
+CHECK:
+Rejected count   =COUNTIF(Applications!O2:O244,"Rejected")
+Hired count      =COUNTIF(Applications!O2:O244,"Hired")
+
+[Step 6]
+ASK GEMINI:
+Explain this spreadsheet like I'm 5 years old.
+
+ASK GEMINI:
+How can I remove duplicates in Google Sheets?
+
+[Step 7]
+ASK GEMINI:
+Is there anything in the Applications tab that looks wrong or inconsistent? List the issues with an example of each. Don't change anything.
+
+[Step 8]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

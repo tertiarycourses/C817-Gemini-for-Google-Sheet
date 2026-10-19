@@ -2,7 +2,7 @@
 (non-WSQ variant — no TGS/WSQ reference line):
 cover page, Document Version Control Record, Table of Contents (field),
 "Page X of Y" footer, branded Heading styles, and update-fields-on-open."""
-from docx.shared import Pt, RGBColor
+from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
@@ -81,6 +81,15 @@ def add_cover_page(doc, kind, title, version, conducted_by=ORG,
     _line(doc, f"Version {version}", 12, bold=True, color=BRAND)
     doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 
+def set_col_widths(table, widths):
+    """Fix column widths on both the table grid and every cell, so Word and LibreOffice agree."""
+    table.autofit = False
+    for i, w in enumerate(widths):
+        table.columns[i].width = w
+        for cell in table.columns[i].cells:
+            cell.width = w
+
+
 def add_version_control(doc, rows):
     """rows: list of (version, effective_date, changes, author)."""
     h = doc.add_paragraph(); r = h.add_run("DOCUMENT VERSION CONTROL RECORD")
@@ -97,6 +106,7 @@ def add_version_control(doc, rows):
         cells = t.add_row().cells
         for i, val in enumerate(row):
             cells[i].text = ""; rr = cells[i].paragraphs[0].add_run(str(val)); rr.font.size = Pt(9.5)
+    set_col_widths(t, [Inches(0.8), Inches(1.15), Inches(3.4), Inches(1.15)])
     doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 
 def add_toc(doc, levels="1-3"):

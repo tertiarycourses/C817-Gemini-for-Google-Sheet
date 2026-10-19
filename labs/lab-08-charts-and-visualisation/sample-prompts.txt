@@ -1,0 +1,59 @@
+Gemini for Google Sheet (C817) — Lab 8: Build Charts That Tell the Hiring Story
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-8
+
+[1] Pie
+Create a pie chart of applications by Source.
+
+[2] Stacked
+Create a stacked column chart of applications by Month, split by Stage.
+
+[3] Combo
+Create a chart with applications as columns and hires as a line, by Month.
+
+[4] Help
+What chart type is best to show the share of each source over time?
+
+[5] Graph
+Create a graph that shows the percentage of applications that came from each Position.
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Hiring_Charts (Google Sheets copy)
+Tabs      : About_This_Data | Applications (720 rows) | Jobs | Source_Costs | Prompt_Log
+
+[Step 2]
+INSERT:
+Create a line chart with Month on the x-axis and the number of applications on the y-axis.
+
+[Step 3]
+INSERT:
+Make a bar chart of hires (Stage is Hired) by Source, sorted from most to fewest.
+
+INSERT:
+Create a column chart of the hiring funnel: Applications (all rows), Interviewed (rows with an Interview_Score), Offered (Stage is Offered or Hired) and Hired.
+
+[Step 4]
+ASK GEMINI:
+Will the chart you inserted update if I change the Applications tab? How do I make a chart that does?
+
+[Step 5]
+ACTION:
+Create a pivot table on a new sheet that counts Candidate_ID with Month in rows and Stage in columns.
+
+[Step 6]
+INSERT:
+Using the Applications and Source_Costs tabs, create a column chart of cost per hire by Source, where cost per hire is applications x Cost_Per_Application divided by hires.
+
+[Step 7]
+ASK GEMINI:
+Suggest a title for each chart in this spreadsheet that states the main finding, not just the measure.
+For example: 'Applications peaked in June'.
+
+[Step 8]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.

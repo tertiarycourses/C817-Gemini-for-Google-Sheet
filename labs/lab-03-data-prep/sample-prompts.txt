@@ -1,0 +1,63 @@
+Gemini for Google Sheet (C817) — Lab 3: Clean and Prepare the Candidate Data with Gemini Actions
+Sample prompts for Gemini in Google Sheets. Copy one at a time, adapt it, and verify every result.
+Prompts web page (one-click Copy): https://tertiarycourses.github.io/C817-Gemini-for-Google-Sheet/prompts/#lab-3
+
+[1] Fill
+Fill the empty Email cells with the text 'missing - ask candidate'.
+
+[2] Insert
+Insert a new column called Source_Group after Source and leave it empty.
+
+[3] Number format
+Format Screening_Score as a whole number and Interview_Score with one decimal place.
+
+[4] Delete rows
+Delete the rows where Stage is Withdrawn.
+
+[5] Help
+How do I split the Key_Skills column into separate columns?
+
+------------------------------------------------------------
+Step prompts used in this lab
+------------------------------------------------------------
+
+[Step 1]
+Required state:
+File      : OrchidBay_Q3_Applications_Prep (Google Sheets copy)
+Tabs      : About_This_Data | Applications | Jobs | Prompt_Log
+Start     : 243 rows, 17 columns (including Internal_Notes)
+
+[Step 2]
+ASK GEMINI:
+How can I remove the duplicate rows on the Applications tab and keep one copy of each?
+
+[Step 3]
+ACTION:
+In the Source column, find 'Linked In' and 'linkedin' and replace them with 'LinkedIn'.
+
+[Step 4]
+ACTION:
+1) In the Expected_Salary column, find 'S$' and ',' and replace them with nothing.
+2) Set the number format of the Expected_Salary column to currency S$ with no decimal places.
+3) For Candidate_ID CAN-26607, change Years_Experience from -3 to 3.
+
+[Step 5]
+ACTION:
+1) Insert a new column named Name_Clean to the right of Full_Name and fill it with =PROPER(TRIM(B2)) down to the last row.
+2) Delete the Internal_Notes column.
+3) Freeze the top row and the first column.
+
+[Step 6]
+ACTION:
+1) Apply a table style to the data on the Applications tab to make it easier to read.
+2) Sort the table by Applied_Date in descending order.
+3) Filter for Software Engineer candidates whose Source is Referral.
+4) Clear the filter so all rows are visible.
+
+[Step 7]
+ACTION:
+Finish cleaning this table: format Applied_Date as yyyy-mm-dd, make the Stage column a dropdown with Applied, Screened, Shortlisted, Interviewed, Offered, Hired, Rejected and Withdrawn, and highlight in light green the rows where Stage is Hired.
+
+[Step 8]
+LOG:
+List the prompts I sent you in this conversation. For each one, give a one-line summary of what you did, so I can copy it into the Prompt_Log tab.
